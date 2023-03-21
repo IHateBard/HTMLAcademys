@@ -28,19 +28,20 @@ const DESCRIPTION = [
   
   //массив использованных id
   const takenIds = {}
-  
+
   const createPhotoContainer = () => {
     const idComments = {};
+    const userIds =  Array.from({length: 6}, () => getRandomPositiveInteger(1,6))
     const id = getUniqueId(takenIds, 25);
     const comments = Array.from({length: getRandomPositiveInteger(5, 50)}, () => createComment(idComments, id));
     return{
-       id,
-       url: `photos/${id}.jpg`,
-       description: getRandomArrayElement(DESCRIPTION),
-       likes: getRandomPositiveInteger(0,200),
-       comments
-      }
-  }
-
+      userIds: getRandomArrayElement(userIds),
+      id,
+      url: `photos/${id}.jpg`,
+      description: getRandomArrayElement(DESCRIPTION),
+      likes: getRandomPositiveInteger(0,200),
+      comments
+    };
+  };
 
   export {createPhotoContainer};

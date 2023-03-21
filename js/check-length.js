@@ -14,7 +14,7 @@ const checkLength = (element, maxLength) => {
   
         if (isValid) {
          console.log('Длина подходит')
-        }
+        };
     });
 };
 

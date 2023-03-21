@@ -10,9 +10,10 @@ getEditingForm();
 closeEditingForm();
 
 // Проверка на длину комментария
-const uploadComment = document.querySelector('.text__description')
-checkLength(uploadComment, 140)
+const uploadComment = document.querySelector('.text__description');
+checkLength(uploadComment, 140);
 
-renderingThimbnails()
-
-openFullSizePhoto()
+// Отрисовка миниатюр фото
+renderingThimbnails();
+// Открытие фото
+openFullSizePhoto();
