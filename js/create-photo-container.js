@@ -32,13 +32,13 @@ const DESCRIPTION = [
   const createPhotoContainer = () => {
     const idComments = {};
     const id = getUniqueId(takenIds, 25);
-    const arrComments = Array.from({length: getRandomPositiveInteger(5, 50)}, () => createComment(idComments, id));
+    const comments = Array.from({length: getRandomPositiveInteger(5, 50)}, () => createComment(idComments, id));
     return{
        id,
        url: `photos/${id}.jpg`,
        description: getRandomArrayElement(DESCRIPTION),
        likes: getRandomPositiveInteger(0,200),
-       comments: arrComments
+       comments
       }
   }
 

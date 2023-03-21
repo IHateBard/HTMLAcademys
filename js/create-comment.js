@@ -27,12 +27,10 @@ const COMMENTS = [
 const createComment = (map, parentId) => {
     const id = parentId + getUniqueId(map, 5);
     return{
-       comments: {
         id,
         avatar: `img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
         message: getRandomArrayElement(COMMENTS),
         name: getRandomArrayElement(NAMES)
-       }
       }
   }
 
