@@ -9,7 +9,9 @@ const commentsContainer = document.querySelector('.social__comments');
 const commentsCapture = document.querySelector('.social__caption');
 const bigPictureImg = document.querySelector('.big-picture__img img');
 const closeButton = document.querySelector('.big-picture__cancel');
-
+const loadCommentButton = document.querySelector('.social__comments-loader');
+const body = document.querySelector('body')
+let photoIndex = 0;
 
 const openFullSizePhoto = () => {
     const pictureImgCollection = document.querySelectorAll('.picture__img');
@@ -21,15 +23,15 @@ const openFullSizePhoto = () => {
             likes.textContent = element.parentNode.querySelector('.picture__info .picture__likes').textContent;
             descriptionAvatar.src = `img/avatar-${photoContainer[index].userIds}.svg`;
             commentsCapture.textContent = photoContainer[index].description;
-
-            printComments(index, 3);
-
-            //убрать в следующем задании 2 строчки ниже
-            document.querySelector('.social__comment-count').classList.add('hidden');
-            document.querySelector('.comments-loader').classList.add('hidden');
+            photoIndex = index;
+            printComments(index, 5);
         })
     })
   
+    loadCommentButton.addEventListener ('click', () => {
+        printComments(photoIndex, 5)
+    })
+
     closeButton.addEventListener('click', () => {
         bigPictureContainer.classList.add('hidden')
         document.querySelector('body').classList.remove('modal-open');
