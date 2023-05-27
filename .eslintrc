@@ -9,6 +9,7 @@ env:
   browser: true
 
 globals:
+  no-console: "off",
   _: readonly
   L: readonly
   noUiSlider: readonly
