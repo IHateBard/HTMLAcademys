@@ -60,6 +60,7 @@ const onFormSubmit = (evt) => {
   const isvalid = pristine.validate();
   if (isvalid) {
     const formData = new FormData(evt.target);
+    console.log(new FormData(evt.target));
     fetch('https://25.javascript.pages.academy/kekstagram', {
       method: 'POST',
       contentType: 'multipart/form-data',
